@@ -1,14 +1,14 @@
   .head-content {
-    background-color: #c2e9ff;
+    background-color: $primary;
   }
 
   .head-sub {
-    background-color: #def3ff;
+    background-color: $secondary;
   }
 
   .links {
     display: flex;
-    background-color: #c2e9ff;
+    background-color: $info;
     justify-content: center;
     align-items: center;
   }
