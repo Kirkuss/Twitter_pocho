@@ -1,21 +1,33 @@
-<div class="head-content"><h1 class="display-1">Articles<h1>
+<div class="head-content container">
+    <h1 class="display-1">Articles<h1>
 </div>
 
-<h1 class="display-5 head-sub">Our blog has <%= Article.public_count %> articles and counting!
-</h1>
-
-<ul class="list-unstyled list-picker">
-    <% @articles.each do |article| %>
-        <% unless article.archived? %>
-            <li>
-                <p class="lead"><%= link_to article.title, article %>
-                </p>
-            </li>
-        <% end %>
-    <% end %>
-</ul>
-
-<div class="links">
-    <p class="h4 link_to_"><%= link_to "New Article", new_article_path %>
-    </p>
+<div class="head-sub container">
+    <h1 class="display-5">Our blog has <%= Article.public_count %> articles and counting!
+    </h1>
 </div>
+
+<div class="container articles-content">
+    <div class="list-unstyled list-picker container">
+        <div class="row row-cols-auto justify-content-center g-2">
+            <% @articles.each do |article| %>
+                <% unless article.archived? %>
+                    <div class="col">
+                        <div class="p-3 border bg-light">
+                            <p class="lead"><%= link_to article.title, article %>
+                            </p>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>
+<div class="row row-cols-auto justify-content-center">
+    <div class="col align-self-center">
+        <div class="btn btn-info">
+            <%= link_to "New Article", new_article_path, :class => "btn" %>
+        </div>
+    </div>
+</div>
+
