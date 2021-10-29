@@ -7,15 +7,14 @@
     </h1>
 </div>
 
-<div class="container articles-content">
+<div class="container articles-content bg-transparent">
     <div class="list-unstyled list-picker container">
         <div class="row row-cols-auto justify-content-center g-2">
             <% @articles.each do |article| %>
                 <% unless article.archived? %>
                     <div class="col">
-                        <div class="p-3 border bg-light">
-                            <p class="lead"><%= link_to article.title, article %>
-                            </p>
+                        <div class="btn btn-light border border-5 rounded">
+                            <%= link_to article.title, article, :class => "btn fw-bold" %>
                         </div>
                     </div>
                 <% end %>
@@ -25,8 +24,8 @@
 </div>
 <div class="row row-cols-auto justify-content-center">
     <div class="col align-self-center">
-        <div class="btn btn-info">
-            <%= link_to "Nuevo", new_article_path, :class => "btn" %>
+        <div class="btn btn-info border border-3 border-primary">
+            <%= link_to "Nuevo", new_article_path, :class => "btn fst-italic fw-bold" %>
         </div>
     </div>
 </div>
