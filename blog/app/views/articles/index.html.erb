@@ -1,9 +1,9 @@
 <div class="head-content container">
-    <h1 class="display-1">Articles<h1>
+    <h1 class="display-1">Blog<h1>
 </div>
 
 <div class="head-sub container">
-    <h1 class="display-5">Our blog has <%= Article.public_count %> articles and counting!
+    <h1 class="display-5">Hay <%= Article.public_count %> publicaciones
     </h1>
 </div>
 
@@ -26,7 +26,7 @@
 <div class="row row-cols-auto justify-content-center">
     <div class="col align-self-center">
         <div class="btn btn-info">
-            <%= link_to "New Article", new_article_path, :class => "btn" %>
+            <%= link_to "Nuevo", new_article_path, :class => "btn" %>
         </div>
     </div>
 </div>
