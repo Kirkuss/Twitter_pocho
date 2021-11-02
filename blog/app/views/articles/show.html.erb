@@ -1,17 +1,29 @@
-<h1><%= @article.title %></h1>
+<div class="head-content container">
+    <h1 class="display-1"><%= @article.title %></h1>
+</div>
 
-<p><%= @article.body %></p>
+<div class="container bg-light gy-5">
+    <p class="h3"><%= @article.body %></p>
+    <div class="btn-group container d-flex justify-content-center" role="group" arial-label="Basic example">
+        <%= link_to "Edit", edit_article_path(@article), :class => "btn btn-primary"%>
+        <%= link_to "Delete", article_path(@article),
+            method: :delete,
+            data: { confirm: "Are you sure?" }, 
+            :class => "btn btn-primary"%>
+        <%= link_to "Home", root_path, :class => "btn btn-primary" %>
+    </div>
+</div>
 
-<ul>
-    <li><%= link_to "Edit", edit_article_path(@article) %></li>
-    <li><%= link_to "Destroy", article_path(@article), 
-        method: :delete,
-        data: { confirm: "Are you sure?" }  %></li>
-    <li><%= link_to "Home", root_path %></li>
-</ul>
+<div class="container bg-primary text-white">
+    <h2>Comments</h2>
+    <div class="container bg-light text-black">
+        <%= render @article.comments %>
+    </div>
+</div>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
-
-<h2>Add comment:</h2>
-<%= render "comments/form" %>
+<div class="container bg-primary text-white">
+    <h2>Add comment:</h2>
+    <div class="container bg-light text-black">
+        <%= render "comments/form" %>
+    </div>
+</div>
