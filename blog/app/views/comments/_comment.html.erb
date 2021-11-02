@@ -1,10 +1,9 @@
 <div class="container rounded border border-2 py-1 my-1">
     <p>
-        <strong>Commenter:</strong>
-        <%= comment.commenter %>
+        <strong><%= "@" + comment.commenter %></strong>
     </p>
     <p>
-        <div class="container rounded border border-2">
+        <div>
             <%= comment.body %>
         </div>
     </p>

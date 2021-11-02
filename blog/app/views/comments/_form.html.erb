@@ -1,21 +1,29 @@
+<div class="my-2">
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><strong>@: </strong></span>
+        </div>
+        <%= form.text_field :commenter,
+            :class => "form-control", 
+            :placeholder => "Username", 
+            :type => "text"
+            %>
+    </div>
+    <div class="input-group mb-2">
+        <%= form.text_area :body,
+            :class => "form-control", 
+            :placeholder => "Your comment here...", 
+            :type => "text"
+            %>
+        <%= form.select :status,
+            ["public", "private", "archived"], 
+            :class => "custom-select",
+            selected: "public"
+            %>
+    </div>
     <p>
-        <%= form.label :commenter %><br>
-        <%= form.text_field :commenter %>
-        <%= @article.comments.build.errors.full_messages_for(:commenter).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
-    </p>
-    <p>
-        <%= form.label :body %><br>
-        <%= form.text_area :body %>
-    </P>
-    <p>
-        <%= form.label :status %><br>
-        <%= form.select :status, ["public", "private", "archived"], selected: "public" %>
-    </p>
-
-    <p>
-        <%= form.submit %>
+        <%= form.submit "Comentar", :class => "btn btn-outline-primary" %>
     </p>
 <% end %>
+</div>
