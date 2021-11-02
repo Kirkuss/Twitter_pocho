@@ -15,9 +15,9 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="">
-          <img src="Bird.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-          Twitter pocho
+        <a class="navbar-brand">
+        <%= show_svg("Bird.svg") %>
+          Twitter Pocho
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -34,11 +34,8 @@
         </div>
       </div>
     </nav>
-    <div class="container-fluid page-content">
+    <div class="container-fluid page-content bg">
       <%= yield %>
     </div>
-    <!--<div class="container-fluid bg-secondary fixed-bottom">
-        <p class="fs-4">Este es el pie de pagina</p>
-    </div>-->
   </body>
 </html>

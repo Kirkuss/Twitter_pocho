@@ -1,28 +1,33 @@
+<div class="container bg-light rounded-bottom py-3">
 <%= form_with model: article do |form| %>
-    <div>
-        <%= form.label :title %><br>
-        <%= form.text_field :title %>
-        <%= article.errors.full_messages_for(:title).each do |message| %>
-            <div><%= message %></div>
-        <% end %>
-    </div>
 
-    <div>
-        <%= form.label :body %><br>
-        <%= form.text_field :body %>
-        <%= article.errors.full_messages_for(:body).each do |message| %>
+    <div class="input-group shadow">
+        <span class="input-group-text" id="basic-addon1"><strong>Titulo: </strong></span>
+        <%= form.text_field :title, 
+            :type => "text", 
+            :class => "form-control", 
+            :placeholder => "Title here..." 
+        %>
+        <!--<%= article.errors.full_messages_for(:title).each do |message| %>
+            <a><%= message %></a>
+        <% end %>-->
+    </div>
+    <div class="input-group mb-3 shadow">
+        <%= form.text_area :body,
+            :type => "text",
+            :class => "form-control",
+            :placeholder => "Article text here..."
+        %>
+        <!--<%= article.errors.full_messages_for(:body).each do |message| %>
             <div><%= message %><div>
-        <% end %>
+        <% end %>-->
+        <%= form.select :status,
+            ["public", "private", "archived"], 
+            :class => "custom-select",
+            selected: "public"
+            %>
     </div>
-
     <div>
-        <%= form.label :status %><br>
-        <%= form.select :status, ["public", "private", "archived"], selected: "public" %>
-    </div>
-
-    <div>
-        <%= form.submit %>
+        <%= form.submit "Done", :class => "btn btn-outline-primary" %>
     </div>
 <% end %>
-
-<%= link_to "Home", root_path %>
