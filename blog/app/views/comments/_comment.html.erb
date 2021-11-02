@@ -1,15 +1,19 @@
-<p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-</p>
-
-<p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-</p>
-
-<p>
-    <%= link_to "Destroy Comment", [comment.article, comment],
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
-</p>
+<div class="container rounded border border-2 py-1 my-1">
+    <p>
+        <strong>Commenter:</strong>
+        <%= comment.commenter %>
+    </p>
+    <p>
+        <div class="container rounded border border-2">
+            <%= comment.body %>
+        </div>
+    </p>
+</div>
+<div class="btn-group g-5" role="group" arial-label="Buttons">
+    <p>
+        <%= link_to "Delete", [comment.article, comment],
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            :class => "btn btn-outline-primary" %>
+    </p>
+</div>
