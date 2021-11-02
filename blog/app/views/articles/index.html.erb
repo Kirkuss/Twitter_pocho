@@ -12,12 +12,12 @@
         <div class="row row-cols-auto justify-content-center g-2">
             <% @articles.each do |article| %>
                 <% unless article.archived? %>
-                    <div class="col card p-3">
+                    <div class="col card p-3 shadow mx-2" style="width: 18rem">
                         <div class="card-body">
-                            <h5 class="card-title">
+                            <h5 class="card-title border rounded">
                                 <%= article.title %>
                             </h5>
-                            <p class="card-text">
+                            <p class="card-text text-truncate border rounded">
                                 <%= article.body %>
                             </p>
                             <div class="btn btn-light border border-5 rounded">

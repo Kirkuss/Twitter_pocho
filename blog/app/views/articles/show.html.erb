@@ -2,30 +2,29 @@
     <h1 class="display-1"><%= @article.title %></h1>
 </div>
 
-<div class="container bg-light py-2">
-    <div class="container border border-2 rounded">
+<div class="container bg-light py-2 rounded-bottom">
+    <div class="container border border-2 rounded shadow">
         <p class="h3"><%= @article.body %></p>
     </div>
-    <div class="btn-group g-5" role="group" arial-label="Buttons">
+    <div class="btn-group g-5 my-3" role="group" arial-label="Buttons">
         <%= link_to "Edit", edit_article_path(@article), :class => "btn btn-outline-primary"%>
         <%= link_to "Delete", article_path(@article),
             method: :delete,
             data: { confirm: "Are you sure?" }, 
             :class => "btn btn-outline-primary"%>
-        <%= link_to "Home", root_path, :class => "btn btn-outline-primary" %>
     </div>
 </div>
 
-<div class="container bg-primary text-white py-1">
-    <h2>Comments</h2>
-    <div class="container bg-light text-black py-2">
+<div class="container bg-primary text-white py-1 my-4 rounded shadow">
+    <h2 class="display-6">Comments</h2>
+    <div class="container bg-light text-black py-2 rounded">
         <%= render @article.comments %>
     </div>
 </div>
 
-<div class="container bg-primary text-white py-2">
-    <h2>Add comment:</h2>
-    <div class="container bg-light text-black">
+<div class="container bg-primary text-white py-2 rounded shadow">
+    <h2 class="display-6">Add comment:</h2>
+    <div class="container bg-light text-black rounded">
         <%= render "comments/form" %>
     </div>
 </div>
